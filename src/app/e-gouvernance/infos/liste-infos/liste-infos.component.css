@@ -1,0 +1,60 @@
+/* liste-infos-gouvernement.component.css */
+.infos-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .info-card {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .info-details {
+    flex: 1;
+  }
+  
+  .info-details h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .info-details p {
+    margin-bottom: 5px;
+  }
+  
+
+ 
+.modifier-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modifier-button:hover {
+    background-color: #0056b3;
+  }
+  

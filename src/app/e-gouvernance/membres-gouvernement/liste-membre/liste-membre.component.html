@@ -1,0 +1,39 @@
+<h2 style="text-align: center;">Liste des membres du gouvernement</h2>
+<div *ngIf="loading; else content">
+  <mat-spinner></mat-spinner> 
+</div>
+
+
+  <ng-template #content>
+    <ng-container *ngIf="membres.length; else noData">
+      
+      <div class="membres-container">
+        <div class="membre-card" *ngFor="let membre of membres">
+          <div class="membre-image">
+            <img [src]="membre.image" alt="Image du membre">
+          </div>
+          <div class="membre-details">
+            <h3>{{ membre.nom }} {{ membre.prenom }}</h3>
+            <p><strong>Fonction :</strong> {{ membre.fonction }}</p>
+            <p><strong>État :</strong> 
+              <span *ngIf="!membre.etat">
+                Fonctionnel
+              </span>
+              <span *ngIf="membre.etat">
+                {{ membre.etat }}
+              </span>
+            </p>
+           
+            <a href="" routerLink="/e-gouvernance/modifier-membre-gouvernement/{{ membre._id }}"><button class="modifier-button">Modifier</button></a>
+          </div>
+        </div>
+      </div>
+  
+    </ng-container>
+  
+    <ng-template #noData>
+      <p>No information available.</p>
+    </ng-template>
+  </ng-template>
+  
+  

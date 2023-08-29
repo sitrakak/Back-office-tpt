@@ -1,0 +1,40 @@
+<!-- ajout-membre-gouvernement.component.html -->
+<br>
+<div class="form-container">
+    <h2>Modifier membre gouvernement</h2>
+    <form ngForm (ngSubmit)="update()" #membreForm>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="fonction">Fonction</label>
+        <select id="fonction" name="fonction" [(ngModel)]="fonction" required>
+          <option value="">Sélectionner une fonction</option>
+          <option value="Ministre">Ministre</option>
+          <option value="Secrétaire d'État">Secrétaire d'État</option>
+          <option value="Conseiller">Conseiller</option>
+        
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="debutService">Début de service</label>
+        <input type="date" id="debutService" name="debutService" [(ngModel)]="debutService" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Profil</label>
+        <input type="file" id="image" name="image" (change)="onImageChange($event)" accept="image/*">
+      </div>
+  
+      <button type="submit">Modifier</button>
+    </form>
+  </div>
+  

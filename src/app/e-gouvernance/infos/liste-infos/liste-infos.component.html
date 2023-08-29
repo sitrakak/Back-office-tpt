@@ -1,0 +1,33 @@
+<!-- liste-infos.component.html -->
+<h2 style="text-align: center;">Liste des informations</h2>
+<div *ngIf="loading; else content">
+  <mat-spinner></mat-spinner> 
+</div>
+
+
+<ng-template #content>
+  <ng-container *ngIf="infos.length; else noData">
+    <div class="infos-container">
+      <div class="info-card" *ngFor="let info of infos">
+        <div class="info-image">
+          <img [src]="info.image" alt="Image du info">
+        </div>
+        <div class="info-details">
+          <h3>{{ info.titre }}</h3>
+          <p><strong>Auteur :</strong> {{ info.nom_auteur }}</p>
+          <p><strong>Contenu :</strong> {{ info.contenu }}</p>
+          <!-- Ajoutez le bouton "Modifier" avec une classe de style -->
+          <a href="" routerLink="/e-gouvernance/modifier-infos/{{ info._id }}"><button class="modifier-button">Modifier</button></a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #noData>
+    <p>No information available.</p>
+  </ng-template>
+</ng-template>
+
+
+
+  

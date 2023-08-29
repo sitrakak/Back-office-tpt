@@ -1,0 +1,79 @@
+
+        <h3>  {{ projet?.nom }}  </h3>
+        <p><strong>Responsable :</strong>   {{ projet?.responsable }}  </p>
+        <p><strong>Description :</strong>   {{ projet?.description }}  </p>
+        <p><strong>Remarque :</strong>   {{ projet?.remarque }}  </p>
+        <p><strong>Limite :</strong>   {{ projet?.date_limite | date }}  </p>
+<div class="main-container">
+
+  <div class="form-container" *ngIf="showForm"> 
+    <h2>Ajouter Etape</h2>
+    <form ngForm (ngSubmit)="save()" #etapeForm>
+        <div class="form-group">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea id="description" name="description" [(ngModel)]="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="dateDebut">Date de début :</label>
+            <input type="date" id="dateDebut" name="dateDebut" [(ngModel)]="dateDebut" required>
+        </div>
+
+        <div class="form-group">
+            <label for="datePrevu">Date d'accomplissement :</label>
+            <input type="date" id="datePrevu" name="datePrevu" [(ngModel)]="datePrevu" required>
+        </div>
+
+        <div class="form-group">
+            <label for="remarque">Remarque :</label>
+            <textarea id="remarque" name="remarque" [(ngModel)]="remarque"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image :</label>
+            <input type="file" id="image" name="image" (change)="onImageChange($event)">
+        </div>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</div>
+
+<div class="table-container">
+    <div class="form-group">
+    <h2>Etapes du projet</h2>
+    <div class="form-toggle">
+        <button (click)="toggleForm()" style="background-color: yellow;color: black;width: 100px;height: 30px;">Ajouter Etape</button>
+    </div>
+    </div>
+    <table class="step-table">
+        <thead>
+            <tr class="table-header">
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date d'accomplissement</th>
+                <th>Remarque</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let step of etapes">
+                <td> {{ step.nom }} </td>
+                <td> {{ step.description }} </td>
+                <td> {{ step.dateDebut | date }} </td>
+                <td> {{ step.datePrevu | date }} </td>
+                <td> {{ step.remarque }} </td>
+                <td><img [src]="step.image" alt="Image" width="50"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+

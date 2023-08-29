@@ -1,0 +1,60 @@
+<div class="main-container">
+    <header class="navbar">
+      <a href="" routerLink="/e-gouvernance/" style="text-decoration: none;color: white;"><img src="assets/images/logo.png" alt="E-Gouvernance" class="navbar-logo"></a>
+        <a href="" routerLink="/e-gouvernance/" style="text-decoration: none;color: white;"><span class="navbar-text" style="margin-top: -20px;" >E-Gouvernance</span></a>
+
+        <button class="navbar-logout-button" (click)="deconnecter()">
+          Déconnexion
+        </button>
+
+    </header>
+  
+    <div class="content-container">
+      <aside class="sidebar">
+        <div class="info-list">
+          <h3>Informations</h3>
+         
+          <div class="dropdown">
+            <button class="dropbtn">Informations</button>
+            <div class="dropdown-content">
+              <a href="" routerLink="/e-gouvernance/create-infos">Nouveau</a>
+              <a href="" routerLink="/e-gouvernance/liste-infos">Liste</a>
+             
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="dropdown">
+            <button class="dropbtn">Membres du gouvernement</button>
+            <div class="dropdown-content">
+              <a href="" routerLink="/e-gouvernance/create-membre-gouvernement">Nouveau membre</a>
+              <a href="" routerLink="/e-gouvernance/liste-membre-gouvernement">Liste des membres</a>
+             
+            </div>
+          </div>
+          <br>
+        <br>
+          <div class="dropdown">
+            <button class="dropbtn">Projet</button>
+            <div class="dropdown-content">
+              <a href="" routerLink="/e-gouvernance/create-projet">Nouveau projet</a>
+              <a href="" routerLink="/e-gouvernance/liste-projet">Liste des projets</a>
+             
+            </div>
+          </div>
+          <br>
+        <br>
+
+        </div>
+      </aside>
+  
+      <!-- Content -->
+      <main class="content">
+        <!-- Mettez ici le contenu de votre page principale (content) -->
+       
+
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+  

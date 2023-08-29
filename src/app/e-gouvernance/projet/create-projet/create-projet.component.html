@@ -1,0 +1,44 @@
+<!-- creation-projet.component.html -->
+<div class="form-container">
+    <h2>Création de projet</h2>
+    <form ngForm (ngSubmit)="save()" #projetForm>
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" [(ngModel)]="description" rows="4" required></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="responsable">Responsable</label>
+        <input type="text" id="responsable" name="responsable" [(ngModel)]="responsable" required>
+        <p class="note">Note : Veuillez spécifier le responsable du projet.</p>
+      </div>
+  
+      <div class="form-group">
+        <label for="remarque">Remarque</label>
+        <textarea id="remarque" name="remarque" [(ngModel)]="remarque" rows="4"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateDebut">Date début</label>
+        <input type="date" id="dateDebut" name="dateDebut" [(ngModel)]="dateDebut" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="dateLimite">Date limite</label>
+        <input type="date" id="dateLimite" name="dateLimite" [(ngModel)]="dateLimite" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" (change)="onImageChange($event)" accept="image/*">
+      </div>
+  
+      <button type="submit">Créer le projet</button>
+    </form>
+  </div>
+  
