@@ -9,8 +9,8 @@ import { User } from '../models/User-model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  identifiant='' as string;
-  password='' as string;
+  identifiant='admin1' as string;
+  password='12345' as string;
   message="";
 
   constructor(private authService : AuthService,
